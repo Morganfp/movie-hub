@@ -2,6 +2,8 @@
 
 A movie discovery application that allows users to search for movies by title and view key details such as release year, rating, and cover images. Built with React, this app offers a clean, responsive UI and seamless integration with the MovieDB API.
 
+<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/0f14d9e5-5dc0-44f8-91b3-facf72496fb8" />
+
 ### Header
 
 - **App Branding**: Simple and clean header with movie logo.
