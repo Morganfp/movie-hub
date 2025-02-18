@@ -1,9 +1,13 @@
 import { IoSearch } from 'react-icons/io5';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { MoviesContext } from '../contexts/MoviesContext.js';
 const apiKey = import.meta.env.VITE_MOVIES_API_KEY;
 
-function SearchBar({ addMovies }) {
+function SearchBar() {
   const [input, setInput] = useState('');
+  // Destructure the MoviesContext
+  const { movies, dispatch } = useContext(MoviesContext);
 
   const handleChange = (event) => {
     setInput(event.target.value);
@@ -48,8 +52,8 @@ function SearchBar({ addMovies }) {
       }));
       // Clear search bar input
       setInput('');
-      // call the addMovies callback to update the movies state
-      addMovies(movieData);
+      // call the dispatch function with an array of movie data
+      dispatch({ type: 'setMovies', movieData });
     } catch (err) {
       setInput('');
       alert("Couldn't find that movie, try another");

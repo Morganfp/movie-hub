@@ -1,6 +1,11 @@
 import MovieItem from './MovieItem.jsx';
+import { useContext } from 'react';
+import { MoviesContext } from '../contexts/MoviesContext.js';
 
-function MovieList({ movies }) {
+function MovieList() {
+  // Destructure the MoviesContext
+  const { movies, dispatch } = useContext(MoviesContext);
+
   return (
     <>
       <div

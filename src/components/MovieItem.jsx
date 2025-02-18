@@ -12,10 +12,14 @@ function MovieItem({ movie }) {
     for (let i = 0; i < 5; i++) {
       if (currStars - 1 >= 0) {
         currStars--;
-        stars.push(<FaStar color="#FF424F" size={14} />);
+        stars.push(
+          <FaStar color="#FF424F" size={14} key={crypto.randomUUID()} />
+        );
       } else if (currStars - 0.5 >= 0) {
         currStars -= 0.5;
-        stars.push(<FaStarHalf color="#FF424F" size={14} />);
+        stars.push(
+          <FaStarHalf color="#FF424F" size={14} key={crypto.randomUUID()} />
+        );
       }
     }
     return stars;

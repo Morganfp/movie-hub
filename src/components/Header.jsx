@@ -1,7 +1,7 @@
 import { MdMovie } from 'react-icons/md';
 import SearchBar from './SearchBar.jsx';
 
-function Header({ addMovies }) {
+function Header() {
   return (
     <>
       <div
@@ -26,8 +26,7 @@ function Header({ addMovies }) {
             Movie Hub
           </h1>
         </div>
-        {/* Pass addMovies as a prop to be called back later */}
-        <SearchBar addMovies={addMovies} />
+        <SearchBar />
         <div style={{ marginLeft: 'auto' }}>Join</div>
       </div>
     </>
