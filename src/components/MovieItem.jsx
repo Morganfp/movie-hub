@@ -1,5 +1,3 @@
-import { FaStar } from 'react-icons/fa6';
-import { FaStarHalf } from 'react-icons/fa6';
 import placeholderImage from '../assets/placeholder.jpg';
 import { getStars } from '../utils/getStars';
 

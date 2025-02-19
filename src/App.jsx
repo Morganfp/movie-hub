@@ -1,6 +1,6 @@
 import './App.css';
 import { MoviesContext } from './contexts/MoviesContext.js';
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Movie from './pages/Movie.jsx';
@@ -20,6 +20,14 @@ function reducer(state, action) {
 function App() {
   // State to hold movies and dispatch to call the reducer function with an array of movie data
   const [movies, dispatch] = useReducer(reducer, []);
+
+  // Update sessionStorage with movie data
+  useEffect(() => {
+    // Only update when new movies are set
+    if (movies.length > 0) {
+      sessionStorage.setItem('movies', JSON.stringify(movies));
+    }
+  }, [movies]);
 
   return (
     <>

@@ -22,7 +22,13 @@ function Movie() {
 
   // Update the movieInfo state
   useEffect(() => {
-    setMovieInfo(movies.find((movie) => Number(movie.id) === Number(movieId)));
+    setMovieInfo(
+      movies.length > 0
+        ? movies.find((movie) => Number(movie.id) === Number(movieId))
+        : JSON.parse(sessionStorage.getItem('movies')).find(
+            (movie) => Number(movie.id) === Number(movieId)
+          )
+    );
   }, [movies]);
 
   const navigate = useNavigate();
