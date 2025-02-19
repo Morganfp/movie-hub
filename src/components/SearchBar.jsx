@@ -1,9 +1,13 @@
 import { IoSearch } from 'react-icons/io5';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { MoviesContext } from '../contexts/MoviesContext.js';
 const apiKey = import.meta.env.VITE_MOVIES_API_KEY;
 
-function SearchBar({ addMovies }) {
+function SearchBar() {
   const [input, setInput] = useState('');
+  // Destructure the MoviesContext
+  const { movies, dispatch } = useContext(MoviesContext);
 
   const handleChange = (event) => {
     setInput(event.target.value);
@@ -33,7 +37,7 @@ function SearchBar({ addMovies }) {
         return;
       }
       // Iterate over the first 'page' of returned movies (maximum of 20)
-      // Create a movieData object to hold the mvoies (title, coverUr (poster image), release date, rating, and id)
+      // Create a movieData object to hold the movies (title, coverUr (poster image), release date, rating, overview, and id)
       const movieData = data.results.map((movie) => ({
         title: movie.title,
         coverUrl: movie.poster_path
@@ -44,12 +48,13 @@ function SearchBar({ addMovies }) {
           : '-',
         // Convert the returned 1-10 rating to a 1-5 rating which this app uses
         rating: Math.round((movie.vote_average / 2) * 2) / 2,
+        overview: movie.overview,
         id: movie.id,
       }));
       // Clear search bar input
       setInput('');
-      // call the addMovies callback to update the movies state
-      addMovies(movieData);
+      // call the dispatch function with an array of movie data
+      dispatch({ type: 'setMovies', movieData });
     } catch (err) {
       setInput('');
       alert("Couldn't find that movie, try another");
