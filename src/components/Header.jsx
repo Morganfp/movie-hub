@@ -27,7 +27,6 @@ function Header() {
           </h1>
         </div>
         <SearchBar />
-        <div style={{ marginLeft: 'auto' }}>Join</div>
       </div>
     </>
   );

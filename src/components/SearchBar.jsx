@@ -37,7 +37,7 @@ function SearchBar() {
         return;
       }
       // Iterate over the first 'page' of returned movies (maximum of 20)
-      // Create a movieData object to hold the mvoies (title, coverUr (poster image), release date, rating, and id)
+      // Create a movieData object to hold the movies (title, coverUr (poster image), release date, rating, overview, and id)
       const movieData = data.results.map((movie) => ({
         title: movie.title,
         coverUrl: movie.poster_path
@@ -48,6 +48,7 @@ function SearchBar() {
           : '-',
         // Convert the returned 1-10 rating to a 1-5 rating which this app uses
         rating: Math.round((movie.vote_average / 2) * 2) / 2,
+        overview: movie.overview,
         id: movie.id,
       }));
       // Clear search bar input

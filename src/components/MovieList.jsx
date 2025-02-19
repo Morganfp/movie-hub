@@ -1,6 +1,7 @@
 import MovieItem from './MovieItem.jsx';
 import { useContext } from 'react';
 import { MoviesContext } from '../contexts/MoviesContext.js';
+import { Link } from 'react-router-dom';
 
 function MovieList() {
   // Destructure the MoviesContext
@@ -17,7 +18,11 @@ function MovieList() {
         }}
       >
         {movies.map((movie) => (
-          <MovieItem key={movie.id} movie={movie} />
+          <span key={movie.id}>
+            <Link to={`/movie/${movie.id}`} style={{ textDecoration: 'none' }}>
+              <MovieItem movie={movie} />
+            </Link>
+          </span>
         ))}
       </div>
     </>

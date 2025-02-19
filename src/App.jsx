@@ -1,8 +1,10 @@
 import './App.css';
-import Header from './components/Header.jsx';
-import MovieList from './components/MovieList.jsx';
 import { MoviesContext } from './contexts/MoviesContext.js';
 import { useReducer } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Movie from './pages/Movie.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 // Reducer function to perform actions on the movies state
 function reducer(state, action) {
@@ -23,12 +25,13 @@ function App() {
     <>
       {/* Provide the movies state and dispatch function to all components */}
       <MoviesContext.Provider value={{ movies, dispatch }}>
-        <div style={{ backgroundColor: '#232A31', minHeight: '100vh' }}>
-          <Header />
-          <div style={{ padding: '4rem 7rem' }}>
-            <MovieList />
-          </div>
-        </div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movie/:movieId" element={<Movie />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </MoviesContext.Provider>
     </>
   );
