@@ -4,6 +4,8 @@ A movie discovery application that allows users to search for movies by title an
 
 <img width="1440" alt="Image" src="https://github.com/user-attachments/assets/0f14d9e5-5dc0-44f8-91b3-facf72496fb8" />
 
+<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/6e94ec0e-d0ae-4f54-a946-d57c95356404" />
+
 ### Home Page
 
 - Remders the Header and MovieList compnents.
