@@ -35,7 +35,7 @@ A movie discovery application that allows users to search for movies by title an
 
 - React
 - JavaScript (ES6+)
-- Hooks: `useState`, `useEffect`
+- Hooks: `useState`, `useEffect`, `useReducer`, `useContext`
 - CSS
 
 ## Future Enhancements
