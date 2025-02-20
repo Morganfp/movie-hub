@@ -1,4 +1,4 @@
-# Movie Hub
+# Movie Hut
 
 A movie discovery application that allows users to search for movies by title and view key details such as title, release year, rating, and cover images. Users can click on a movie to open a detailed page with additional information, including the movie's trailer and overview. Built with React, this app features a clean, responsive UI and seamless integration with The Movie Database (TMDB) API (https://developer.themoviedb.org/reference/intro/getting-started).
 
@@ -50,7 +50,7 @@ A movie discovery application that allows users to search for movies by title an
 1. Clone the repository
 2. Install dependencies:
 
-- cd movie-hub
+- cd movie-hut
 - npm install
 
 3. Create a `.env` file in the root directory with your TMDb API key:

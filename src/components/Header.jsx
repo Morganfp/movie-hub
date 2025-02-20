@@ -1,5 +1,6 @@
 import { MdMovie } from 'react-icons/md';
 import SearchBar from './SearchBar.jsx';
+import { GiHut } from 'react-icons/gi';
 
 function Header() {
   return (
@@ -21,9 +22,9 @@ function Header() {
             gap: '.5rem',
           }}
         >
-          <MdMovie size={28} />
+          <GiHut size={36} />
           <h1 style={{ fontWeight: '500', fontSize: '22px', margin: 0 }}>
-            Movie Hub
+            Movie Hut
           </h1>
         </div>
         <SearchBar />
