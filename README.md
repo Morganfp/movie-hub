@@ -2,9 +2,9 @@
 
 A movie discovery application that allows users to search for movies by title and view key details such as title, release year, rating, and cover images. Users can click on a movie to open a detailed page with additional information, including the movie's trailer and overview. Built with React, this app features a clean, responsive UI and seamless integration with The Movie Database (TMDB) API (https://developer.themoviedb.org/reference/intro/getting-started).
 
-<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/0f14d9e5-5dc0-44f8-91b3-facf72496fb8" />
+<img width="1424" alt="Image" src="https://github.com/user-attachments/assets/fbb46845-2392-427a-8371-230732cf37b3" />
 
-<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/6e94ec0e-d0ae-4f54-a946-d57c95356404" />
+<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/57a0a754-af97-4796-ad89-4c24711ff99b" />
 
 ### Home Page
 
