@@ -40,12 +40,15 @@ A movie discovery application that allows users to search for movies by title an
 
 ## Future Enhancements
 
-- Search by director, actors, etc.
-- Display streaming services on where to watch movies.
-- Support for multiple pages of movie results.
-- Mobile responsiveness.
-- Ability to sort movies by rating, release date, etc.
-- Display the movie director from 'https://api.themoviedb.org/3/movie/{movie_id}/credits'.
+- Input validation
+- Login/Logout
+- Profile dashboard
+- Favorite movies
+- Search by director, actors, etc
+- Display streaming services on where to watch movies
+- Support for multiple pages of movie results
+- Ability to sort movies by rating, release date, etc
+- Display the movie director from 'https://api.themoviedb.org/3/movie/{movie_id}/credits'
 
 ## Installation
 

@@ -6,53 +6,19 @@ function MovieItem({ movie }) {
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '5px',
-          flexWrap: 'wrap',
-          maxWidth: '10rem',
-        }}
-      >
+      <div className="flex flex-col gap-1 flex-wrap max-w-[8rem] md:max-w-[10rem]">
         <img
           src={coverUrl ? coverUrl : placeholderImage}
           alt={title}
-          style={{
-            width: '10rem',
-            height: '240px',
-            boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)',
-            borderRadius: '5px',
-          }}
+          className="w-[10rem] h-[180px]
+ md:w-[10rem] md:h-[240px] shadow-lg rounded-sm"
         />
-        <p
-          style={{
-            margin: '8px 0 0 0',
-            fontWeight: 400,
-            color: '#ffffff',
-            fontSize: '17px',
-          }}
-        >
-          {title}
-        </p>
-        <p
-          style={{
-            margin: '3px 0 0 0',
-            fontWeight: 400,
-            color: '#6d8a9d',
-          }}
-        >
+        <p className="mt-1 md:mt-2 text-white text-base font-normal">{title}</p>
+        <p className="mt-[-3px] md:mt-0 text-[#6d8a9d] text-base font-normal">
           {release}
         </p>
-        <div
-          style={{
-            fontSize: '10px',
-            display: 'flex',
-            gap: '5px',
-            margin: '3px 0 0 0',
-          }}
-        >
-          {getStars(rating, 14)}
+        <div className="mt-[-3px] md:mt-0 text-[10px] flex gap-1">
+          {getStars(rating, 15)}
         </div>
       </div>
     </>

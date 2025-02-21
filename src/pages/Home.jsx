@@ -6,7 +6,7 @@ function Home() {
     <>
       <div>
         <Header />
-        <div style={{ padding: '4rem 7rem' }}>
+        <div className="py-12 px-6 md:py-16 md:px-28">
           <MovieList />
         </div>
       </div>

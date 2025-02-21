@@ -72,7 +72,7 @@ function Movie() {
   // Returns a YouTube video using ReactPlayer
   const YouTubePlayer = (videoUrl) => {
     return (
-      <div style={{ width: '100%' }}>
+      <div className="w-full h-[170px] md:h-[460px] rounded-sm overflow-hidden">
         <ReactPlayer
           url={videoUrl}
           playing={true} // Auto plays video
@@ -81,20 +81,9 @@ function Movie() {
           light={true} // Display a thumbnail initially
           loop={true} // Loop video
           width="100%"
-          height="460px"
+          height="100%" // This makes it take full height of the container
           playIcon={
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: '80px',
-                height: '80px',
-                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                borderRadius: '50%',
-                cursor: 'pointer',
-              }}
-            >
+            <div className="flex justify-center items-center w-20 h-20 bg-black/70 rounded-full cursor-pointer">
               <FaPlay color="white" size={30} />
             </div>
           }
@@ -106,72 +95,31 @@ function Movie() {
   return (
     <>
       <div>
-        <div style={{ padding: '3rem 5rem 0rem 5rem' }}>
-          <div
-            onClick={handleBackClick}
-            style={{ cursor: 'pointer', width: '2rem' }}
-          >
-            <IoIosArrowBack size={30} color="FF424F" />
+        <div className="py-5 px-3 md:pt-12 md:pb-0 md:px-20">
+          <div onClick={handleBackClick} className="cursor-pointer w-8">
+            <IoIosArrowBack size={30} color="#FF424F" />
           </div>
-          <div style={{ margin: '2rem 4rem', color: '#fff' }}>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginBottom: '1.5rem',
-              }}
-            >
+          <div className="my-4 mx-6 md:mt-6 md:mx-16 text-white">
+            <div className="flex flex-col md:flex-row md:items-center mb-4 md:mb-6">
               {/* Title */}
-              <h1
-                style={{
-                  margin: '0',
-                  fontWeight: 400,
-                  fontSize: '28px',
-                }}
-              >
+              <h1 className="m-0 font-semibold text-xl md:text-2xl">
                 {movieInfo.title}
               </h1>
               {/* Release */}
-              <p
-                style={{
-                  fontSize: '22px',
-                  margin: '0 0 0 .8rem',
-                  color: '#6d8a9d',
-                }}
-              >
+              <p className="text-base md:text-lg md:ml-3 text-[#6d8a9d]">
                 {movieInfo.release}
               </p>
               {/* Stars */}
-
-              <div
-                style={{
-                  fontSize: '10px',
-                  display: 'flex',
-                  gap: '5px',
-                  marginLeft: 'auto',
-                }}
-              >
-                {getStars(movieInfo.rating, 18)}
+              <div className="text-[10px] flex gap-1 md:ml-auto">
+                {getStars(movieInfo.rating, 17)}
               </div>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginBottom: '1.5rem',
-                gap: '1rem',
-              }}
-            >
+            <div className="flex flex-col  md:flex-row items-center mb-6 gap-4">
               {/* Cover image */}
               <img
                 src={movieInfo.coverUrl ? movieInfo.coverUrl : placeholderImage}
                 alt={movieInfo.title}
-                style={{
-                  width: '19rem',
-                  height: '460px',
-                  boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)',
-                  borderRadius: '5px',
-                }}
+                className="w-full md:w-[19rem] md:h-[460px] shadow-lg rounded-sm"
               />
               {/* Trailer */}
               {movieVideo.link
@@ -180,15 +128,8 @@ function Movie() {
                   )
                 : null}
             </div>
-            <p
-              style={{
-                margin: '0',
-                fontWeight: 300,
-                color: '#ffffff',
-                fontSize: '18px',
-                lineHeight: '26px',
-              }}
-            >
+            {/* Overview */}
+            <p className="pb-6 font-light text-white text-lg leading-7">
               {movieInfo.overview}
             </p>
           </div>

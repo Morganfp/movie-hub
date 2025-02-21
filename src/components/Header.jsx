@@ -1,29 +1,26 @@
-import { MdMovie } from 'react-icons/md';
 import SearchBar from './SearchBar.jsx';
 import { GiHut } from 'react-icons/gi';
 
 function Header() {
+  // When the user clicks the logo, clear session storage and reload the page
+  const handleClick = (event) => {
+    event.preventDefault();
+    sessionStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <>
-      <div
-        style={{
-          backgroundColor: '#FF424F',
-          padding: '2rem 4rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '3.5rem',
-          color: '#ffffff',
-        }}
-      >
+      <div className="text-white bg-red-500 py-4 px-6 md:py-8 md:px-20 flex items-center md:gap-12 justify-between">
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '.5rem',
-          }}
+          onClick={handleClick}
+          className="flex items-center gap-1 md:gap-2 cursor-pointer"
         >
-          <GiHut size={36} />
-          <h1 style={{ fontWeight: '500', fontSize: '22px', margin: 0 }}>
+          <GiHut className="w-6 h-6 md:w-10 md:h-10" />
+          <h1
+            className="font-semibold text-lg md:text-2xl m-0"
+            style={{ fontFamily: "'Cabin', sans-serif" }}
+          >
             Movie Hut
           </h1>
         </div>

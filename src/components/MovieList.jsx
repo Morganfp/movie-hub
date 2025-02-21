@@ -16,41 +16,31 @@ function MovieList() {
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          gap: '5rem',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-        }}
-      >
+      <div className="flex gap-14 md:gap-20 flex-wrap justify-center">
         {/* Render movies if the user has searched */}
-        {/* Else if render movies in session storage if there are any
-         */}
+        {/* Else if: render movies in session storage if there are any */}
         {/* Else render no movies */}
-        {movies.length > 0
-          ? movies.map((movie) => (
-              <span key={movie.id}>
-                <Link
-                  to={`/movie/${movie.id}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <MovieItem movie={movie} />
-                </Link>
-              </span>
-            ))
-          : storedMovies.length > 0
-          ? storedMovies.map((movie) => (
-              <span key={movie.id}>
-                <Link
-                  to={`/movie/${movie.id}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <MovieItem movie={movie} />
-                </Link>
-              </span>
-            ))
-          : null}
+        {movies.length > 0 ? (
+          movies.map((movie) => (
+            <span key={movie.id}>
+              <Link to={`/movie/${movie.id}`} className="no-underline">
+                <MovieItem movie={movie} />
+              </Link>
+            </span>
+          ))
+        ) : storedMovies.length > 0 ? (
+          storedMovies.map((movie) => (
+            <span key={movie.id}>
+              <Link to={`/movie/${movie.id}`} className="no-underline">
+                <MovieItem movie={movie} />
+              </Link>
+            </span>
+          ))
+        ) : (
+          <h1 className="text-[#364049] text-xl md:text-3xl mt-2">
+            Search for a movie...
+          </h1>
+        )}
       </div>
     </>
   );

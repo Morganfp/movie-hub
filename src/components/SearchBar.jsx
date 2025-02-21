@@ -16,6 +16,9 @@ function SearchBar() {
   // Fetch movies from themoviedb api
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!input) {
+      return;
+    }
     try {
       // Fetch the movie data
       const response = await fetch(
@@ -57,31 +60,17 @@ function SearchBar() {
       dispatch({ type: 'setMovies', movieData });
     } catch (err) {
       setInput('');
-      alert("Couldn't find that movie, try another");
+      alert("We're experiencing issues right now. Please try again later.");
       console.log('Error fetching data:', err);
     }
   };
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          position: 'relative',
-        }}
-      >
+      <form onSubmit={handleSubmit} className="relative">
         <button
           type="submit"
-          style={{
-            position: 'absolute',
-            left: '0.5rem',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            color: '#888',
-            background: 'none',
-            border: 'none',
-            display: 'flex',
-          }}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500 bg-none border-none flex"
         >
           <IoSearch size={15} />
         </button>
@@ -91,16 +80,9 @@ function SearchBar() {
           type="text"
           value={input}
           placeholder="Search"
-          style={{
-            backgroundColor: '#ffffff',
-            border: 'none',
-            borderRadius: '8px',
-            padding: '.5rem 2.5rem',
-            width: '15rem',
-            fontSize: '14px',
-            outline: 'none',
-          }}
-        ></input>
+          onBlur={handleSubmit}
+          className="bg-white text-black border-none rounded-lg py-1 px-7 w-37 md:py-1.5 md:px-10 md:w-60 text-base outline-none"
+        />
       </form>
     </>
   );
