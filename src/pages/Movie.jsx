@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 const apiKey = import.meta.env.VITE_MOVIES_API_KEY;
 import { useContext } from 'react';
 import { MoviesContext } from '../contexts/MoviesContext';
@@ -41,11 +42,12 @@ function Movie() {
   useEffect(() => {
     const fetchMovieVideo = async () => {
       try {
-        const response = await fetch(
+        // Use axios to fetch the movie media links
+        const response = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`
         );
-        const data = await response.json();
-        let videoObj = undefined;
+        const data = response.data;
+        let videoObj;
 
         if (data.results.length > 0) {
           // Extract the first object in the response array that has 'YouTube' as the .site and 'Trailer' as the .type
@@ -63,7 +65,16 @@ function Movie() {
           type: videoObj.type === 'Trailer' ? 'trailer' : 'clip',
         });
       } catch (err) {
-        console.log('Error fetching data:', err);
+        if (err.response) {
+          // The request was made and the server responded with an error
+          console.log('Response error:', err.response);
+        } else if (err.request) {
+          // The request was made and the server responded with an error
+          console.log('Request error:', err.request);
+        } else {
+          // Something else happened
+          console.log('Error:', err);
+        }
       }
     };
     fetchMovieVideo();

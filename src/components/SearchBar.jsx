@@ -2,6 +2,7 @@ import { IoSearch } from 'react-icons/io5';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { MoviesContext } from '../contexts/MoviesContext.js';
+import axios from 'axios';
 const apiKey = import.meta.env.VITE_MOVIES_API_KEY;
 
 function SearchBar() {
@@ -20,19 +21,18 @@ function SearchBar() {
       return;
     }
     try {
-      // Fetch the movie data
-      const response = await fetch(
+      // Use axios to fetch the movie data
+      const response = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${input}`,
         {
-          method: 'GET',
           headers: {
             Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
         }
       );
-      // Parse the response
-      const data = await response.json();
+      // Extract the data from the response
+      const data = response.data;
       // If the response contains no movie data, the movie wasn't found
       if (data.results.length === 0) {
         setInput('');
@@ -61,7 +61,16 @@ function SearchBar() {
     } catch (err) {
       setInput('');
       alert("We're experiencing issues right now. Please try again later.");
-      console.log('Error fetching data:', err);
+      if (err.response) {
+        // The request was made and the server responded with an error
+        console.error('Response error:', err.response.data);
+      } else if (err.request) {
+        // The request was made but no response was received
+        console.error('Request error:', err.request);
+      } else {
+        // Something else happened
+        console.error('Error:', err.message);
+      }
     }
   };
 

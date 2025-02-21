@@ -10,7 +10,7 @@ Check it out at [www.moviehut.morganfpurcell.com](https://moviehut.morganfpurcel
 
 ### Home Page
 
-- Remders the Header and MovieList compnents.
+- Renders the Header and MovieList components.
 
 ### Header
 
@@ -31,7 +31,7 @@ Check it out at [www.moviehut.morganfpurcell.com](https://moviehut.morganfpurcel
 
 ### Movie Page
 
-- Renders a detailed movie page with additional information, including the movie's trailer and overview.
+- Renders a detailed movie page with additional information, including the movie's overview and trailer fetched from The Movie Database (TMDB) API.
 
 ### Tech
 
@@ -43,12 +43,14 @@ Check it out at [www.moviehut.morganfpurcell.com](https://moviehut.morganfpurcel
 ## Future Enhancements
 
 - Input validation
+- API rate limiting
+- Support for multiple pages of movie results
 - Login/Logout
 - Profile dashboard
 - Favorite movies
 - Search by director, actors, etc
+- Testing
 - Display streaming services on where to watch movies
-- Support for multiple pages of movie results
 - Ability to sort movies by rating, release date, etc
 - Display the movie director from 'https://api.themoviedb.org/3/movie/{movie_id}/credits'
 
