@@ -1,7 +1,14 @@
+// NotFound.jsx
+// Renders a not found page for invaid URLs
+// Allows tje user to click a back arrow to go to previous page they were on
+
+// React Router
 import { useNavigate } from 'react-router-dom';
+// Styles
 import { IoIosArrowBack } from 'react-icons/io';
 
 function NotFound() {
+  // Set up navigation
   const navigate = useNavigate();
 
   return (

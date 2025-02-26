@@ -1,3 +1,7 @@
+// Home.jsx
+// Renders the home page with the Header and MovieList components
+
+// Components
 import Header from '../components/Header.jsx';
 import MovieList from '../components/MovieList.jsx';
 

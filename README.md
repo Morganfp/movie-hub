@@ -1,6 +1,6 @@
 # Movie Hut
 
-A movie discovery application that allows users to search for movies by title and view key details such as title, release year, rating, and cover images. Users can click on a movie to open a detailed page with additional information, including the movie's trailer and overview. Built with React, this app features a clean, responsive UI and seamless integration with The Movie Database (TMDB) API (https://developer.themoviedb.org/reference/intro/getting-started).
+A movie discovery platform with user authentication, favorites system, and real-time data. Search for movies, save favorites, watch trailers, and enjoy a seamless experience powered by React, Firebase, and the TMDB API.
 
 Check it out at [www.moviehut.morganfpurcell.com](https://moviehut.morganfpurcell.com/)
 
@@ -8,61 +8,53 @@ Check it out at [www.moviehut.morganfpurcell.com](https://moviehut.morganfpurcel
 
 <img width="1440" alt="Image" src="https://github.com/user-attachments/assets/57a0a754-af97-4796-ad89-4c24711ff99b" />
 
-### Home Page
+### Key Features
 
-- Renders the Header and MovieList components.
+🎥 Movie Experience
 
-### Header
+- Search for movies and see results
+- Detailed movie info with title, cover image, release year, overview, rating (stars)
+- Movie trailer integration via YouTube Player
 
-- **App Branding**: Simple and clean header with movie logo.
-- **Search Bar**: Users can search movies by title.
-  - Uses `useState` for input management.
-  - Fetches movie data from The Movie Database (TMDB) API.
-  - Stores movie data using `useReducer` and `sessionStorage`.
-  - Uses `useContext` for global movie state.
+🔒 User Authentication
 
-### Movie List
+- Secure Firebase Authentication (email/password)
+- Auth modal with login/signup forms using React Hook Form
+- Session persistence
 
-- **Movie Display**: Displays a list of movies based on the search.
+❤️ Favorites System
 
-### Movie Item
+- Favorite movies view
+- Real-time favorites sync with Firebase Firestore
+- Loading spinners (react-spinners) for favorite states
 
-- Displays an individual movie with title, release year, rating, and the movie poster image (or a placeholder image if not available).
+🛡️ Production-Ready Infrastructure
 
-### Movie Page
+- Firebase Security Rules for data protection
+- Google Analytics integration for usage tracking
+- Error handling with react-toastify notifications
+- TMDB API for movie data with rate limit handling (50 reqs/sec per IP)
 
-- Renders a detailed movie page with additional information, including the movie's overview and trailer fetched from The Movie Database (TMDB) API.
+### Tech Stack
 
-### Tech
-
-- React
-- JavaScript (ES6+)
-- Hooks: `useState`, `useEffect`, `useReducer`, `useContext`
-- CSS
+- Frontend: React, React Router, Context API
+- Backend: Firebase Authentication, Firebase Firestore
+- Styling: Tailwind CSS, react-icons
+- Utilities: react-toastify, react-spinners, UUID
+- APIs: TMDB API (https://developer.themoviedb.org/reference/intro/getting-started)
 
 ## Future Enhancements
 
-- Input validation
-- API rate limiting
-- Support for multiple pages of movie results
-- Login/Logout
+- Make the favorites icon shake periodically
+- Reroute if a user not logged in navigates to /favorites or /favmovie (protected routes)
+- SEO optimization
+- Separate files for login and sign-up forms
+- Create a shared MovieLayout component for Movie.jsx and FavMovie.jsx
+- Component testing
+- Pagination for movie results: Support multiple pages
+- Display movie director: Fetch from TMDB credits endpoint
+- Display streaming services / where to watch
+- Search by director/actors
+- Filter and sort movies/fav
+- Delay loading trailer until play button click
 - Profile dashboard
-- Favorite movies
-- Search by director, actors, etc
-- Testing
-- Display streaming services on where to watch movies
-- Ability to sort movies by rating, release date, etc
-- Display the movie director from 'https://api.themoviedb.org/3/movie/{movie_id}/credits'
-
-## Installation
-
-1. Clone the repository
-2. Install dependencies:
-
-- cd movie-hut
-- npm install
-
-3. Create a `.env` file in the root directory with your TMDb API key:
-4. Start the development server:
-
-- npm run dev
