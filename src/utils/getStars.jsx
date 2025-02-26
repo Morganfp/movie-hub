@@ -1,6 +1,11 @@
+// getStars.jsx
+// A util function that accepts a rating from 1-5 and returns an array of JSX stars
+
+// UUID
+import { v4 as uuidv4 } from 'uuid';
+// Styles
 import { FaStar } from 'react-icons/fa6';
 import { FaStarHalf } from 'react-icons/fa6';
-import { v4 as uuidv4 } from 'uuid';
 
 // Return the amount of stars based off the 1-5 rating
 export const getStars = (rating, size) => {

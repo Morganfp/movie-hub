@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+.modalForm {
+  @apply bg-white py-8 px-2 w-70 rounded flex flex-col items-center justify-center md:py-10 md:px-6 md:w-100;
+}
+
+.modalTitle {
+  @apply text-xl font-semibold mb-1 md:text-2xl;
+}
+
+.modalSubTitle {
+  @apply text-sm font-normal opacity-50 mb-4 md:text-base;
+}
+
+.modalSection {
+  @apply flex flex-col;
+}
+
+.modalInput {
+  @apply rounded border mb-3 p-1 w-55 text-base md:w-70;
+}
+
+.modalSubmitBtn {
+  @apply bg-[#FF424F] text-white w-20 py-1 px-2 rounded cursor-pointer text-sm mt-1 md:w-25;
+}
+
+.modalSwitchText {
+  @apply text-sm font-normal opacity-50 mt-8 md:text-base;
+}
+
+.modalError {
+  @apply text-sm mt-0 mb-3 text-red-400 max-w-55 md:max-w-full;
+}
+
+.modalSwitchBtn {
+  @apply font-bold text-[#FF424F] opacity-80 text-sm mt-8 cursor-pointer;
+}
