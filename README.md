@@ -4,9 +4,9 @@ A movie discovery platform with user authentication, favorites system, and real-
 
 Check it out at [www.moviehut.morganfpurcell.com](https://moviehut.morganfpurcell.com/)
 
-<img width="1424" alt="Image" src="https://github.com/user-attachments/assets/fbb46845-2392-427a-8371-230732cf37b3" />
+<img width="1424" alt="Image" src="https://github.com/user-attachments/assets/7e9f6685-7090-4365-bd26-077396209b5f" />
 
-<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/57a0a754-af97-4796-ad89-4c24711ff99b" />
+<img width="1424" alt="Image" src="https://github.com/user-attachments/assets/4ce7e7a1-2931-4cf7-acfd-e6e775a60ec7" />
 
 ### Key Features
 
